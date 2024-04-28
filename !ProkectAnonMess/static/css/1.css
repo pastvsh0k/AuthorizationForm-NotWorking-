@@ -1,0 +1,243 @@
+body {
+    background-color: #394061;
+    margin: 0;
+    font-family: 'Times New Roman', serif;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+.wrapper {
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: white;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    box-shadow: 0 0 10px black; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height .2s ease;
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .icon-close {
+position: absolute;
+top: 0;
+right: 0;
+width: 45px;
+height: 45px;
+background: #394061;
+font-size: 2em;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+border-bottom-left-radius: 20px;
+cursor: pointer;
+z-index: 1;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0); 
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: none;
+    transform: translateX(-1px);
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #394061;
+    text-align: center;
+}
+
+.input-box {
+    position: relative;
+    width: 90%; 
+    height: 50px;
+    border-bottom: 2px solid #394061;
+    margin: 30px 2px; 
+    margin-left: 20px; 
+}
+
+
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+        font-size: 1em;
+        color: #394061;
+        font-weight: 500;
+        pointer-events: none;
+        transition: .5s;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #394061;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #394061;
+    line-height: 57px;
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #394061;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.remember-forgot label input {
+    accent-color: #394061;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #394061;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn {
+    width: 90%;
+    height: 45px;
+    background: #394061;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-top: 5px;
+    transition: background-color 0.3s ease; /* Add transition property for background-color */
+}
+
+.btn:hover {
+    background-color: #5562a3; /* Change background color on hover */
+}
+
+.google-btn {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.google-btn .g-btn {
+    width: 90%; /* Задаємо ширину кнопки */
+    height: 45px; /* Задаємо висоту кнопки */
+    background: #394061;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    /*margin-left: 5px;*/
+    margin-top: 5px;
+    align-items: center;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.google-btn .g-btn:hover {
+    background-color: #5562a3;
+}
+
+.icon-gbtn {
+    position: relative;
+    left: 135px;
+    /*right: 20px;  Розміщуємо лого гугла справа */
+    align-items: right;
+    font-size: 1.2em;
+    color: #fff; /* Змінюємо колір іконки на білий */
+    line-height: 45px;
+}
+
+/* Коригуємо розміщення іконки в кнопці */
+.google-btn .icon {
+    margin-left: 10px; /* Задаємо відступ зліва для іконки */
+    margin-right: 5px; /* Задаємо відступ справа для іконки */
+}
+
+
+.login-register {
+    font-size: .9em;
+    color: #394061;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.login-register p a {
+   color: #394061;
+    text-decoration: none;
+    font-weight: 600;   
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -10px;
+}
